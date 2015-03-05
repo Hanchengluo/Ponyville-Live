@@ -5,8 +5,8 @@ $manual = true;
 
 <h4><a href="<?=$this->viewHelper->routeFromHere(array('controller' => 'index', 'action' => 'index')) ?>"><i class="icon-arrow-left"></i> Station Center Home</a></h4>
 
-<div class="row-fluid">
-    <div class="span6">
+<div class="row">
+    <div class="col-md-6">
         <h2>Licensed Artists</h2>
         <div class="well">
         <? foreach($this->licenses as $license_type => $artists): ?>
@@ -38,7 +38,7 @@ $manual = true;
         <? endforeach; ?>
         </div>
     </div>
-    <div class="span6">
+    <div class="col-md-6">
         <h2>Interview-Friendly Artists</h2>
         <div class="well">
             <ul class="media-list">

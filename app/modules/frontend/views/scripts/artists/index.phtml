@@ -5,11 +5,11 @@ $manual = true;
 $categories = \Entity\Artist::getSocialTypes();
 ?>
 
-<div class="row-fluid">
-    <div class="span3">
+<div class="row">
+    <div class="col-md-3">
         <?=$this->viewHelper->renderHere('sidebar') ?>
     </div>
-    <div class="span4">
+    <div class="col-md-4">
         <div class="floating">
             <h2>We &hearts; Content Creators</h2>
 
@@ -22,13 +22,13 @@ $categories = \Entity\Artist::getSocialTypes();
             <p>To get started, <b>visit one of the artist types on the left sidebar, or search for your favorite artist.</b></p>
         </div>
     </div>
-    <div class="span5">
+    <div class="col-md-5">
         <div class="floating">
             <?=\Entity\Block::render('artists') ?>
         </div>
     </div>
     <!--<? /*
-    <div class="span9">
+    <div class="col-md-9">
         <div class="floating">
             <ul class="media-list">
             <? foreach($this->news as $article): ?>

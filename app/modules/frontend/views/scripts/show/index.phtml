@@ -6,9 +6,9 @@ $this->assets->collection('custom_css')->addCss('vendor/world-flags-sprite/style
 $cols = \DF\Utilities::columns($podcasts, 2);
 ?>
 
-<div class="row-fluid">
+<div class="row">
 <? foreach($cols as $col): ?>
-    <div class="span6">
+    <div class="col-md-6">
         <?
         echo $this->viewHelper->renderCommon('podcast', array('podcasts' => $col));
         ?>

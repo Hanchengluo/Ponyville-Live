@@ -2,8 +2,8 @@
 $title = ('My Profile');
 ?>
 
-<div class="row-fluid">
-    <div class="span4">
+<div class="row">
+    <div class="col-md-4">
         <div class="buttons pull-right">
             <?=$this->viewHelper->button(array(
                 'type'      => 'small',
@@ -55,7 +55,7 @@ $title = ('My Profile');
             <a class="text-error" href="<?=$this->viewHelper->route(array('module' => 'default', 'controller' => 'account', 'action' => 'remove')) ?>">Delete PVL Account</a>
         </div>
     </div>
-    <div class="span8">
+    <div class="col-md-8">
         <div class="tabbable">
             <ul class="nav nav-tabs">
             <? $i = 0; ?>

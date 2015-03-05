@@ -2,8 +2,8 @@
 $title = $convention->name;
 ?>
 
-<div class="row-fluid">
-    <div class="span3">
+<div class="row">
+    <div class="col-md-3">
         <h2><i class="icon-info-sign"></i> Convention Info</h2>
         <div class="well">
             <ul class="nav nav-list">
@@ -44,13 +44,13 @@ $title = $convention->name;
             </ul>
         </div>
     </div>
-    <div class="span9">
+    <div class="col-md-9">
     <? foreach($videos as $folder): ?>
         <h2 id="folder_<?=$folder['key'] ?>"><i class="icon-folder-open"></i> <?=$folder['name'] ?></h2>
 
-        <div class="row-fluid row-multiple clearfix">
+        <div class="row row-multiple clearfix">
         <? foreach($folder['videos'] as $record): ?>
-            <div class="span3">
+            <div class="col-md-3">
                 <a class="video fancybox fancybox.iframe <?=$record['type'] ?>" href="<?=$record['web_url'] ?>">
                     <img src="<?=$record['thumbnail_url'] ?>" title="<?=$record['name'] ?>">
                     <div class="name">

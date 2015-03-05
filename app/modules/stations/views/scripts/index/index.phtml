@@ -22,14 +22,14 @@ Highcharts.setOptions({
 });
 </script>
 
-<div class="row-fluid">
-    <div class="span12">
+<div class="row">
+    <div class="col-md-12">
         <?=$this->viewHelper->renderHere('index-dailystats') ?>
     </div>
 </div>
 
-<div class="row-fluid">
-    <div class="span3">
+<div class="row">
+    <div class="col-md-3">
 
         <div class="well">
             <ul class="nav nav-list">
@@ -80,7 +80,7 @@ Highcharts.setOptions({
         
     </div>
 
-    <div class="span5">
+    <div class="col-md-5">
 
         <?=$this->viewHelper->renderHere('index-hourlystats') ?>
 
@@ -141,7 +141,7 @@ Highcharts.setOptions({
         </div>
 
     </div>
-    <div class="span4">
+    <div class="col-md-4">
 
         <?=$this->viewHelper->renderHere('index-dayofweek') ?>
 

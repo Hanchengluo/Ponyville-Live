@@ -4,14 +4,14 @@ $manual = true;
 ?>
 
 <div class="row">
-    <div class="span4">
+    <div class="col-md-4">
         <div class="floating">
             <?
             echo $this->viewHelper->renderHere('player', true);
             ?>
         </div>
     </div>
-    <div class="span5">
+    <div class="col-md-5">
         <div class="floating">
             <div id="lightIRC"></div>
             <script type="text/javascript">
@@ -35,7 +35,7 @@ $manual = true;
             </script>
         </div>
     </div>
-    <div class="span3">
+    <div class="col-md-3">
         <a class="twitter-timeline" href="https://twitter.com/PonyvilleLive" data-widget-id="304830659438972928">Tweets by @PonyvilleLive</a>
         <script>
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

@@ -14,8 +14,8 @@ if ($skin == "dark")
     $this->assets->collection('custom_js')->addJs('js/highcharts/dark-blue.js');
 ?>
 
-<div class="row-fluid">
-    <div class="span3">
+<div class="row">
+    <div class="col-md-3">
         <div class="well">
             <ul class="nav nav-list">
                 <li class="nav-header">Manage Content</li>
@@ -47,15 +47,15 @@ if ($skin == "dark")
             </ul>
         </div>
     </div>
-    <div class="span9">
+    <div class="col-md-9">
         <div id="network_listeners_by_day" style="height: 250px;"></div>
         <div id="station_listeners_by_day" style="height: 450px;"></div>
 
         <h2>Synchronization Status</h2>
         <div class="well">
-            <div class="row-fluid">
+            <div class="row">
             <? foreach($sync_times as $sync_key => $sync_info): ?>
-                <div class="span3">
+                <div class="col-md-3">
                     <h4><?=$sync_info['name'] ?></h4>
                     <p><?=date('F j, Y g:ia', $sync_info['latest']) ?><br><small><?=$sync_info['diff_text'] ?> ago</small></p>
 
@@ -78,8 +78,8 @@ if ($skin == "dark")
 
         <h2>Real-Time Statistics</h2>
         <div class="well">
-            <div class="row-fluid">
-                <div class="span3">
+            <div class="row">
+                <div class="col-md-3">
                     <h4>PVLNode Service</h4>
                     <dl>
                         <dt><?=(int)$pvlnode_stats['clients'] ?></dt>
@@ -89,7 +89,7 @@ if ($skin == "dark")
                         <dd>Since Last Update</dd>
                     </dl>
                 </div>
-                <div class="span9">
+                <div class="col-md-9">
                     <h4>Websocket Updates</h4>
                     <div id="websocket_updates" style="height: 150px; overflow-y: scroll; overflow-x: hidden;">
 

@@ -15,12 +15,12 @@ ob_start();
     <? if ($special_event): ?>
         <div class="well">
             <div class="special_event">
-                <div class="row-fluid">
+                <div class="row">
                     <? if (empty($special_chat_embed)): ?>
-                        <div class="span12"><?=$special_event_embed ?></div>
+                        <div class="col-md-12"><?=$special_event_embed ?></div>
                     <? else: ?>
-                        <div class="span7"><?=$special_event_embed ?></div>
-                        <div class="span5"><?=$this->viewHelper->renderHere('chat', TRUE) ?></div>
+                        <div class="col-md-7"><?=$special_event_embed ?></div>
+                        <div class="col-md-5"><?=$this->viewHelper->renderHere('chat', TRUE) ?></div>
                     <? endif; ?>
                 </div>
             </div>
@@ -60,12 +60,12 @@ ob_start();
 </div>
 <div class="hero">
     <div class="container">
-        <div class="row-fluid">
-            <div class="span6 hero-text">
+        <div class="row">
+            <div class="col-md-6 hero-text">
                 <h4>Your Home for Pony Media</h4>
                 <p><a href="<?=$this->url->get('about') ?>">Ponyville Live!</a> is a network of <a href="#section_radio">radio stations</a>, <a href="#section_video">video streams</a>, and <a href="#section_shows">shows</a>.</p>
             </div>
-            <div class="span3 hero-apps">
+            <div class="col-md-3 hero-apps">
                 <h5>Take Ponyville Live! With You</h5>
                 <div class="btn-group">
                     <?=$this->viewHelper->button(array(
@@ -82,7 +82,7 @@ ob_start();
                     )) ?>
                 </div>
             </div>
-            <div class="span3 hero-social">
+            <div class="col-md-3 hero-social">
                 <div style="padding: 10px 0;">
                     <a href="https://www.youtube.com/ponyvilleliveglobal" target="_blank"><img src="<?=\DF\Url::content('social/youtube.png') ?>" alt="YouTube"></a>
                     <a href="https://twitter.com/PonyvilleLive" target="_blank"><img src="<?=\DF\Url::content('social/twitter.png') ?>" alt="Twitter"></a>
@@ -114,20 +114,20 @@ $station_cols = \DF\Utilities::columns($cat['stations'], 3);
 
 <h2 id="section_radio"><i class="<?=$cat['icon'] ?>"></i> Pony Radio Stations <small><span id="nowplaying-listeners-audio"></span></small></h2>
 
-<div class="row-fluid">
-    <div class="span4">
+<div class="row">
+    <div class="col-md-4">
         <?
         $stations = $station_cols[0];
         echo $this->viewHelper->renderCommon('station', array('stations' => $stations));
         ?>
     </div>
-    <div class="span4">
+    <div class="col-md-4">
         <?
         $stations = $station_cols[1];
         echo $this->viewHelper->renderCommon('station', array('stations' => $stations));
         ?>
     </div>
-    <div class="span4">
+    <div class="col-md-4">
         <?
         $stations = $station_cols[2];
         echo $this->viewHelper->renderCommon('station', array('stations' => $stations));
@@ -154,9 +154,9 @@ $tz_info = \PVL\Timezone::getInfo();
 $podcasts = array_slice($podcasts, 0, 15);
 $podcast_cols = \DF\Utilities::columns($podcasts, 3, true);
 ?>
-<div class="row-fluid">
+<div class="row">
 <? foreach($podcast_cols as $podcast_col): ?>
-    <div class="span4"><?=$this->viewHelper->renderCommon('podcast', array('podcasts' => $podcast_col)) ?></div>
+    <div class="col-md-4"><?=$this->viewHelper->renderCommon('podcast', array('podcasts' => $podcast_col)) ?></div>
 <? endforeach; ?>
 </div>
 
@@ -165,9 +165,9 @@ $podcast_cols = \DF\Utilities::columns($podcasts, 3, true);
 <?
 $cons = array_slice($conventions_archived, 0, 8);
 ?>
-<div class="row-fluid row-multiple clearfix">
+<div class="row row-multiple clearfix">
 <? foreach($cons as $record): ?>
-    <div class="span3">
+    <div class="col-md-3">
         <a class="convention coverage_<?=$record['coverage_level'] ?>" href="<?=$this->viewHelper->route(array('controller' => 'convention', 'action' => 'archive', 'id' => $record['id'])) ?>">
             <img src="<?=\DF\Url::content($record['image']) ?>" alt="Convention Image">
             <div class="coverage" title="<?=$record['coverage']['text'] ?>">
