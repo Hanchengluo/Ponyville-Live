@@ -130,6 +130,14 @@
   left: 0px;
 }
 
+@media (max-width: 979px) {
+  .logo {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+
 /*Menu*/
 .navbar,
 .navbar-inner,
@@ -160,24 +168,26 @@
   padding-right: 0px !important;
 }
 
-.navbar .nav > li {
-  display:block;
-  position:relative;
-}
-.navbar .nav > li > a {
-  display:block;
-  font-size:15px;
-  font-weight:400;
-  color: #687074;
-  text-shadow:none;
-  padding:9px 15px;
-  text-transform:uppercase;
-  border-bottom:solid 2px #eee;
-  font-family:'Open Sans', sans-serif;
-  -webkit-transition:all 0.4s ease-in-out;
-  -moz-transition:all 0.4s ease-in-out;
-  -o-transition:all 0.4s ease-in-out;
-  transition:all 0.4s ease-in-out;
+.navbar {
+  .nav > li {
+    display: block;
+    position: relative;
+  }
+  .nav > li > a {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #687074;
+    text-shadow: none;
+    padding: 9px 15px;
+    text-transform: uppercase;
+    border-bottom: solid 2px #eee;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
 }
 
 .collapse.in {
@@ -193,7 +203,6 @@
 
   li a:hover,
   li a.dropdown-toggle {
-    border-bottom: solid 1px #72c02c !important;
     background: none;
   }
 
@@ -211,17 +220,9 @@
   border-radius:0 !important;
 }
 
-.navbar .nav > li > a:focus,
-.navbar .nav > li > a:hover {
-  color:#72c02c;
-  border-bottom:solid 2px #72c02c;
-}
-
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:focus {
-  color:#72c02c;
   text-decoration:none;
-  border-bottom:solid 2px #72c02c;
   background:none;
   -webkit-box-shadow:none;
   -moz-box-shadow:none;
@@ -229,9 +230,7 @@
 }
 
 .navbar .nav > .active > a:hover {
-  color:#72c02c;
   background:none;
-  border-bottom:solid 2px #72c02c;
   -webkit-box-shadow:none;
   -moz-box-shadow:none;
   box-shadow:none;
@@ -240,8 +239,6 @@
 /*Arrow for menu*/
 .navbar .nav > li > a .caret {
   margin:9px 0 0 3px !important;
-  border-top-color: #72c02c!important;
-  border-bottom-color: #72c02c !important;
 }
 
 /*Dropdown Menu*/
@@ -251,7 +248,6 @@
   margin-top:-2px;
   min-width:200px;
   border-radius:0;
-  border-top:solid 2px #72c02c;
   border-bottom:solid 2px #687074;
   z-index: 9999 !important;
 }
@@ -289,11 +285,7 @@
   padding:10px 15px;
   margin-top:1px;
   margin-right:0;
-  background:#72c02c;
   border:none !important;
-}
-.navbar .btn-navbar:hover {
-  background:#5fb611;
 }
 .navbar .btn-navbar span,
 .navbar .btn-navbar:hover span {
@@ -310,8 +302,6 @@
 }
 .navbar .nav > li > .dropdown-menu:after {
   left:19px;
-  border-top-color: #72c02c !important;
-  border-bottom-color: #72c02c !important;
 }
 
 /*Serach*/
@@ -336,35 +326,20 @@
   position:relative;
 }
 
-.navbar .nav > li > a.search {
-  color:#aaa;
-  cursor:pointer;
-  background:#f7f7f7;
-  padding:8px 12px 10px;
-  border-bottom-color:#aaa;
-}
-.navbar .nav > li > a.search:hover {
-  color:#72c02c;
-  border-bottom-color:#72c02c;
-}
-
-
 /*Menu
 ------------------------------------*/
 .collapse.in li a:hover,
 .collapse.in li a.dropdown-toggle {
-  border-bottom:solid 1px #3498db !important;
+  padding: 5px;
 }
 
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   color:#3498db;
-  border-bottom:solid 2px #3498db;
 }
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:focus {
   color:#3498db;
-  border-bottom:solid 2px #3498db;
 }
 
 .navbar .nav > .active > a:hover {
@@ -423,34 +398,8 @@
 }
 
 @media (max-width: 980px) {
-  .navbar .search-open {
-    top:-39px;
-    left:38px;
-    border:0;
-    padding-top:5px;
-    padding-bottom:5px;
-    position:relative;
-  }
-  .navbar .search-open input {
-    width: 330px;
-  }
-
-  /*Search Box Menu2*/
-  .navbar .search-open-inner {
-    top:-51px;
-    left:45px;
-    border:0;
-    padding-top:6px;
-    padding-bottom:5px;
-    position:relative;
-    background:#3c495a;
-  }
-  .navbar .search-open-inner input {
-    width:330px;
-  }
-
   .top {
-    margin-bottom: 15px;
+    text-align: center;
   }
 }
 
