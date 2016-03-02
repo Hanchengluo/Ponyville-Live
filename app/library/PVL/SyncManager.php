@@ -177,7 +177,7 @@ class SyncManager
     public static function initSync($script_timeout = 60)
     {
         set_time_limit($script_timeout);
-        ini_set('memory_limit', '256M');
+        ini_set('memory_limit', '1024M');
 
         if (DF_IS_COMMAND_LINE)
         {
