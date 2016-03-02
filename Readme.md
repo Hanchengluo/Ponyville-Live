@@ -1,6 +1,6 @@
-![PVL Logo](https://raw.githubusercontent.com/BravelyBlue/PVLive/master/web/resources/bitbucket.png)
+![PVL Logo](https://raw.githubusercontent.com/Poniverse/Ponyville-Live/master/web/resources/bitbucket.png)
 
-**PVLive** is the flagship web application for the [Ponyville Live!](http://ponyvillelive.com/) network, maintained by Bravely Blue Media, LLC.
+**PVLive** is the flagship web application for the [Ponyville Live!](http://ponyvillelive.com/) network, maintained by [Poniverse](https://poniverse.net/).
 
 The PVLive application is built on several powerful technologies:
 
@@ -15,7 +15,7 @@ Behind the scenes, the system is powered by a LEMP (Linux, [nginx](http://nginx.
 
 ## Contribute!
 
-The PVLive codebase has now been made public, both to help our team maintain transparency and to encourage contributions from the developer community. If you see a bug or other issue with the codebase, please report an issue or submit a pull request!
+The PVLive codebase is public, both to help our team maintain transparency and to encourage contributions from the developer community. If you see a bug or other issue with the codebase, please report an issue or submit a pull request!
 
 ## Developing Locally
 
@@ -67,6 +67,6 @@ Because stylesheets are written in SCSS, they must first be compiled into CSS be
 
 Ponyville Live! is a volunteer project, and we depend on your support and feedback to keep growing.
 
-Issues for the PVLive codebase are tracked in this repository's Issues section on Github. Anyone can create a new issue for the project, and you are encouraged to do so.
+Issues for the PVLive codebase are tracked in this repository's Issues section on GitHub. Anyone can create a new issue for the project, and you are encouraged to do so.
 
-If you have any further questions, comments or suggestions, just visit the [Contact Us](http://ponyvillelive.com/contact) page for more information on how to reach our team.
+If you have any further questions, comments or suggestions, just visit our [Contact Us](http://ponyvillelive.com/contact) page for more information on how to reach our team.

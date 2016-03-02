@@ -1,5 +1,5 @@
 {
-  "name": "bravelyblue/pvlive",
+  "name": "Poniverse/Ponyville-Live",
   "description": "The Ponyville Live! primary application.",
   "require": {
     "zendframework/zend-paginator": "~2.4",

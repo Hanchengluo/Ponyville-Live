@@ -5,19 +5,42 @@ $manual = true;
 
 <h2>The Ponyville Live! Network</h2>
 
-<div class="media-list">
-    <div class="media">
-        <img src="<?=\DF\Url::content('images/staff_azura.png') ?>" alt="PVL Mascot Azura Peavielle" class="pull-left">
-        <div class="media-body">
-            <h4 class="media-heading">PVL! Administrators</h4>
+<div class="row-fluid">
+    <div class="span4">
+        <div class="media-list">
+            <div class="media">
+                <img src="<?= \DF\Url::content('images/staff_dusk.png') ?>" alt="Alex &quot;Dusk&quot; Howard" class="pull-left">
+                <div class="media-body">
+                    <h4 class="media-heading">Alex &quot;Dusk&quot; Howard<br>
+                        <small>Network Director</small>
+                    </h4>
+                    <div class="social" style="padding-bottom: 10px;">
+                        <a href="mailto:dusk@ponyvillelive.com"><img src="<?= \DF\Url::content('social/email.png') ?>" alt="E-mail"></a>
+                        <a href="https://twitter.com/Omnicons"
+                           target="_blank"><img src="<?= \DF\Url::content('social/twitter.png') ?>" alt="Twitter"></a>
+                        <a href="skype:rtbd_otacon" target="_blank"><img src="<?= \DF\Url::content('social/skype.png') ?>" alt="Skype"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <div class="media-list">
+            <div class="media">
+                <img src="<?= \DF\Url::content('images/staff_azura.png') ?>"
+                     alt="PVL Mascot Azura Peavielle" class="pull-left">
+                <div class="media-body">
+                    <h4 class="media-heading">PVL! Administrators</h4>
 
-            <dl>
-                <dt>General Information:</dt>
-                <dd><?=$this->viewHelper->mailto('info@ponyvillelive.com') ?></dd>
+                    <dl>
+                        <dt>General Information:</dt>
+                        <dd><?= $this->viewHelper->mailto('info@ponyvillelive.com') ?></dd>
 
-                <dt>Public Relations &amp; Promotions:</dt>
-                <dd><?=$this->viewHelper->mailto('pr@ponyvillelive.com') ?></dd>
-            </dl>
+                        <dt>Public Relations &amp; Promotions:</dt>
+                        <dd><?= $this->viewHelper->mailto('pr@ponyvillelive.com') ?></dd>
+                    </dl>
+                </div>
+            </div>
         </div>
     </div>
 </div>
