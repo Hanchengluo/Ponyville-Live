@@ -82,7 +82,7 @@ class SongExternalPonyFm extends \DF\Doctrine\Entity
     {
         return array(
             'id'        => $result['id'],
-            'created'   => Utilities::gstrtotime($result['published_at']['date']),
+            'created'   => Utilities::gstrtotime($result['published_at']),
             'updated'   => time(),
             'artist'    => $result['user']['name'],
             'title'     => $result['title'],
