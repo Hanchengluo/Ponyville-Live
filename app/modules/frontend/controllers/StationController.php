@@ -201,10 +201,10 @@ class StationController extends BaseController
             case "pls":
             default:
                 $output = array();
-                $output[] = '[playlist]';
-                $output[] = 'NumberOfEntries='.count($stations);
+                $output[0] = '[playlist]';
+                $output[1] = null; // this gets replaced with the number of streams after the loop
 
-                $i = 1;
+                $i = 0;
                 foreach($stations as $station)
                 {
                     foreach($station['streams'] as $stream)
@@ -212,14 +212,15 @@ class StationController extends BaseController
                         if (!$stream['is_active'])
                             continue;
 
+                        $i++;
                         $output[] = 'File' . $i . '=' . $stream['stream_url'];
                         $output[] = 'Title' . $i . '=PVL! ' . $station['name'].': '.$stream['name'];
                         $output[] = 'Length' . $i . '=-1';
                         $output[] = 'Version=2';
 
-                        $i++;
                     }
                 }
+                $output[1] = 'NumberOfEntries='.$i;
 
                 header('Content-Type: audio/x-scpls');
                 header('Content-Disposition: attachment; filename="pvl_stations.pls"');
