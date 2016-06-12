@@ -80,8 +80,8 @@ return array(
                 )),
 
                 'gcal_url' => array('text', array(
-                    'label' => 'Google Calendar XML Feed URL',
-                    'description' => 'This URL can be retrieved by visiting Google Calendar, hovering over the station\'s calendar on the left sidebar, clicking the dropdown menu, then "Calendar Settings". From the settings page, click the "XML" link inside the Calendar Address area. Include full address of the feed (ending in /basic or /full) (with http://).',
+                    'label' => 'Google Calendar iCal URL',
+                    'description' => 'This URL can be retrieved by visiting Google Calendar, hovering over the station\'s calendar on the left sidebar, clicking the dropdown menu, then "Calendar Settings". From the settings page, right-click the "iCal" link inside the Calendar Address area, copy the destination address, and paste it here. Include the full address of the feed (ending in /basic or /full) (with https://).',
                     'class' => 'half-width',
                 )),
 
