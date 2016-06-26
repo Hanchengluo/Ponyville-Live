@@ -684,15 +684,18 @@ var check_interval;
 
 function startPlayer()
 {
-	var stream = {
-		title: "Ponyville Live!",
-		mp3: getPlaybackUrl()
-	};
+    // Sanity check: don't start the player if it's already playing.
+    // The relevant bug: https://github.com/Poniverse/Ponyville-Live/issues/4
+    if (!$("#pvl-jplayer-controls").hasClass('jp-state-playing')) {
+        var stream = {
+            title: "Ponyville Live!",
+            mp3: getPlaybackUrl()
+        };
 
-	$("#pvl-jplayer").jPlayer("setMedia", stream).jPlayer("play");
-
-	is_playing = true;
-	check_interval = setInterval('checkPlayer()', 1500);
+        $("#pvl-jplayer").jPlayer("setMedia", stream).jPlayer("play");
+        is_playing = true;
+        check_interval = setInterval('checkPlayer()', 1500);
+    }
 }
 
 function getPlaybackUrl()
