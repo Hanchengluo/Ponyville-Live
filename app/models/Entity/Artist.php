@@ -157,12 +157,10 @@ class Artist extends \DF\Doctrine\Entity
     {
         if ($image_url)
         {
-            $file_path = DF_UPLOAD_FOLDER.DIRECTORY_SEPARATOR.$image_url;
-            if (file_exists($file_path))
-                return $image_url;
+            return $image_url;
+        } else {
+            return 'pvl_square.png';
         }
-
-        return 'pvl_square.png';
     }
 
     public static function findAbandonedByName($name)
