@@ -99,20 +99,22 @@ class SyncManager
         Debug::runTimer('Run song history cleanup', function() {
             SongHistory::cleanUp();
         });
-
+        
+        /*
         // Sync the BronyTunes library.
         Debug::runTimer('Run BronyTunes sync', function() {
             Service\BronyTunes::load();
         });
+        
+        // Sync the EqBeats library.
+        Debug::runTimer('Run EqBeats sync', function() {
+            Service\EqBeats::load();
+        });
+        */
 
         // Sync the Pony.fm library.
         Debug::runTimer('Run Pony.fm sync', function() {
             Service\PonyFm::load();
-        });
-
-        // Sync the EqBeats library.
-        Debug::runTimer('Run EqBeats sync', function() {
-            Service\EqBeats::load();
         });
 
         Settings::setSetting('sync_slow_last_run', time());
