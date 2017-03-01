@@ -319,13 +319,13 @@ class Controller extends \Phalcon\Mvc\Controller
      */
     protected function forceInsecure()
     {
-//        if (DF_APPLICATION_ENV == 'production' && DF_IS_SECURE)
-//        {
-//            $this->doNotRender();
-//
-//            $url = 'http://'.$this->request->getHttpHost().$this->request->getURI();
-//            return $this->response->redirect($url, 301);
-//        }
+        if (DF_APPLICATION_ENV == 'production' && DF_IS_SECURE)
+        {
+            $this->doNotRender();
+
+            $url = 'http://'.$this->request->getHttpHost().$this->request->getURI();
+            return $this->response->redirect($url, 301);
+        }
     }
 
     /* Referrer storage */
