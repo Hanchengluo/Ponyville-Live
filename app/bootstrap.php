@@ -4,11 +4,11 @@
  */
 
 // Security settings
-define('DF_IS_COMMAND_LINE', (PHP_SAPI == "cli"));
-define("DF_IS_SECURE", (!DF_IS_COMMAND_LINE && (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on")) ? TRUE : FALSE);
+define('DF_IS_COMMAND_LINE', PHP_SAPI == 'cli');
+define("DF_IS_SECURE", !DF_IS_COMMAND_LINE && (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
 
 // General includes
-define("DF_INCLUDE_BASE", dirname(__FILE__));
+define("DF_INCLUDE_BASE", __DIR__);
 define("DF_INCLUDE_ROOT", realpath(DF_INCLUDE_BASE.'/..'));
 define("DF_INCLUDE_WEB", DF_INCLUDE_ROOT.'/web');
 define("DF_INCLUDE_STATIC", DF_INCLUDE_WEB.'/static');
