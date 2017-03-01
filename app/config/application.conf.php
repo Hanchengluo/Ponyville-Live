@@ -14,10 +14,10 @@ $config = array(
     'base_url'          => (DF_IS_SECURE ? 'https://' : 'http://').'ponyvillelive.com',
 
     // Web address for API calls.
-    'api_url'           => (DF_IS_SECURE ? 'https://' : 'http://').'api.ponyvillelive.com',
+    'api_url'           => 'https://api.ponyvillelive.com',
 
     // Web address for user uploads.
-    'upload_url'        => (DF_IS_SECURE ? 'https://' : 'http://').'uploads.ponyvillelive.com',
+    'upload_url'        => 'https://uploads.ponyvillelive.com',
     
     // DF Messenger mail settings
     'mail'              => array(
