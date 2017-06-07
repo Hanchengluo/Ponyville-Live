@@ -21,9 +21,6 @@ then
     # Set up server
     apt-get -q -y install software-properties-common python-software-properties
 
-    # Add Phalcon PPA
-    apt-add-repository ppa:phalcon/stable
-
     # Add MariaDB repo
     apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
     add-apt-repository 'deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.0/ubuntu trusty main'
@@ -31,9 +28,16 @@ then
     apt-get update
 
     apt-get -q -y install vim git curl nginx mariadb-server
-    apt-get -q -y install php5-fpm php5-cli php5-gd php5-mysqlnd php5-curl php5-phalcon php5-redis php5-memcached
+    apt-get -q -y install php5-fpm php5-cli php5-gd php5-mysqlnd php5-curl php5-redis php5-memcached php5-dev gcc libpcre3-dev
     apt-get -q -y install nodejs npm
     apt-get autoremove
+
+    # Install Phalcon
+    # Phalcon 2 isn't available in the apt repo anymore, so we have to compile our own copy!
+    git clone --depth=1 --branch phalcon-v2.0.13 "git://github.com/phalcon/cphalcon.git" /tmp/cphalcon
+    cd /tmp/cphalcon/build
+    ./install
+    service php5-fpm restart
 
     # Set up InfluxDB early (to allow time to initialize before setting up DBs.)
     cd ~
@@ -105,6 +109,8 @@ then
 
     sed -e '/^[^;]*short_open_tag/s/=.*$/= On/' -i.bak /etc/php5/fpm/php.ini
     sed -e '/^[^;]*short_open_tag/s/=.*$/= On/' -i.bak /etc/php5/cli/php.ini
+    echo "extension=phalcon.so" > /etc/php5/fpm/conf.d/80-phalcon.ini
+    echo "extension=phalcon.so" > /etc/php5/cli/conf.d/80-phalcon.ini
 
     mv /etc/php5/fpm/pool.d/www.conf /etc/php5/fpm/www.conf.bak
     cp /vagrant/util/vagrant_phpfpm.conf /etc/php5/fpm/pool.d/www.conf
@@ -154,8 +160,8 @@ then
 fi
 
 # Run Composer.js
-cd $www_base
-composer install
+#cd $www_base
+su - vagrant -c "cd $www_base && composer install"
 
 # Shut off Cron tasks for now
 service cron stop
@@ -193,4 +199,4 @@ service cron start
 service nginx start
 
 echo "One-time setup complete!"
-echo "Server now live at http://dev.pvlive.me"
+echo "Server is now live at http://dev.pvlive.me:8080/"
